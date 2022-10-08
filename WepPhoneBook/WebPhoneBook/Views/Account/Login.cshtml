@@ -1,0 +1,40 @@
+﻿@model WebPhoneBook.AuthApp.UserLogin
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Phone Book</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Вход</h3>
+        
+        <form asp-action="Login" asp-antiforgery="true">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <input type="hidden" asp-for="ReturnUrl"/>
+
+            <div>
+                <input asp-for="UserName" placeholder="Логин" />
+            </div>
+
+            <div>
+                <input asp-for="Password" placeholder="Пароль" />
+            </div>
+
+            <div>
+                <button class="btn" type="submit">Войти</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

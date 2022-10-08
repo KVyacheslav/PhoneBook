@@ -1,0 +1,15 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div>
+        <a class="link-square" href="/Home/CreatePerson">Добавить абонента</a>
+        <a class="link-square" href="#">@User.Identity.Name в системе</a>
+        <form style="display:inline;" method="post" asp-controller="Account" asp-action="Logout" id="logoutform" asp-antiforgery="true">
+                <a class="link-square" href="#" onclick="document.getElementById('logoutform').submit()">Выход</a>
+        </form>
+    </div>
+}
+else
+{
+        <a class="link-square" href="/Account/Login">Вход</a>
+        <a class="link-square" href="/Account/Register">Регистрация</a>
+}

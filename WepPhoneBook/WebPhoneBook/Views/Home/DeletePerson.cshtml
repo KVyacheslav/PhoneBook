@@ -1,0 +1,68 @@
+﻿@model WebPhoneBook.Models.Person
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Удаление @Model.LastName @Model.FirstName @Model.MiddleName</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title__info">Изменение абонента</h1>
+
+        <form asp-action="Delete" method="post">
+            <input asp-for="Id" hidden />
+            <table class="table-2">
+                <tbody>
+                    <tr>
+                        <th>Фамилия</th>
+                        <td>
+                            @Model.LastName
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Имя</th>
+                        <td>
+                            @Model.FirstName
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Отчество</th>
+                        <td>
+                            @Model.MiddleName
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Номер&nbsp;телефона</th>
+                        <td>
+                             @Model.PhoneNumber
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Адрес</th>
+                        <td>
+                            @Model.Address
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Описание</th>
+                        <td>
+                            @Model.Description
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn" type="submit">Удалить</button>
+        </form>
+
+        <div>
+            <a asp-action="Index">На главную страницу</a>
+        </div>
+    </div>
+</body>
+</html>
